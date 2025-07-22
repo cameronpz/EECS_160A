@@ -1,1 +1,1 @@
-# EECS_160A
+This repository contains the MATLAB and Simulink based labs during EECS 160A: Introduction to Control Systems. Some labs didn't contain MATLAB and Simulink and were only hardware based in the laboratory. Those are not included here on GitHub. 
