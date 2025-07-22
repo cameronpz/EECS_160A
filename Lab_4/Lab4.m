@@ -1,0 +1,11 @@
+K_P = 0.215;
+K_I = 3.04;
+C1 = 10;
+C2 = 0.6;
+G1 = tf([K_P K_I],[1 0]);
+G2 = tf(C1, [C2 1]);
+Gain_open = G1*G2;
+Gain_closed = feedback(Gain_open, 0.1);
+Config = RespConfig(Amplitude = 4);
+t = 0:0.000001:6;
+step(Gain_closed,t,Config);
