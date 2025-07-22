@@ -1,0 +1,13 @@
+K_t = 0.094;
+K_e = 0.094;
+La = 528e-6;
+Ra = 0.649;
+b = 666.1*10^-6;
+J=0.0081;
+G1 = tf(1,[La Ra]);
+G2 = tf(1, [J b]);
+Gain_open = G1*K_t*G2;
+pzmap(Gain_open);
+Poles_open = pole(Gain_open);
+Gain_closed = feedback(Gain_open, K_e);
+Poles_closed = pole(Gain_closed);
